@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from 'react';
+import { Link } from 'react-router-dom';
 
 function WebsocketComponent() {
   const [messages, setMessages] = useState<string[]>([]);
@@ -26,7 +27,9 @@ function WebsocketComponent() {
 
   return (
     <div>
-      <h1>WebSocket Messages1</h1>
+      <Link to="/">Back</Link>
+
+      <h1>WebSocket Messages : </h1>
       <ul>
         {messages.map((message) => (
           <li key={message}>{message}</li>

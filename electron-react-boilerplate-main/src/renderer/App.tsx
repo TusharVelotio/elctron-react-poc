@@ -1,9 +1,12 @@
-import { MemoryRouter as Router, Routes, Route } from 'react-router-dom';
+import { MemoryRouter as Router, Routes, Route, Link } from 'react-router-dom';
 import './App.css';
-import InputComponent from './input';
-import WS from '../websocket/ws';
+import { initNavigation } from '@noriginmedia/react-spatial-navigation';
+import WS from '../Containers/websocket/ws';
+import FocusableButtonGrid from '../Containers/FocusableButton/buttonGrid';
 
-export default function App() {
+initNavigation();
+
+function App() {
   return (
     <Router>
       <Routes>
@@ -11,8 +14,15 @@ export default function App() {
           path="/"
           element={
             <div>
-              Electron app
-              <InputComponent />
+              <Link to="/ws">ws</Link>
+              <FocusableButtonGrid focusKey="BUTTON_GRID" />
+            </div>
+          }
+        />
+        <Route
+          path="/ws"
+          element={
+            <div>
               <WS />
             </div>
           }
@@ -21,3 +31,5 @@ export default function App() {
     </Router>
   );
 }
+
+export default App;
