@@ -24,6 +24,11 @@ declare module '*.scss' {
   export default content;
 }
 
+declare module '*.less' {
+  const content: Record<string, string>;
+  export default content;
+}
+
 declare module '*.sass' {
   const content: Styles;
   export default content;
