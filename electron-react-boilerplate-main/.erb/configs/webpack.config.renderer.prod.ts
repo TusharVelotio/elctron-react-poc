@@ -55,6 +55,26 @@ const configuration: webpack.Configuration = {
         include: /\.module\.s?(c|a)ss$/,
       },
       {
+        test: /\.less$/,
+        use: [
+          'style-loader',
+          {
+            loader: 'css-loader',
+            options: {
+              modules: true, // Set to true if you want CSS modules for .less files
+              sourceMap: true,
+            },
+          },
+          'less-loader',
+        ],
+        include: /\.module\.less$/,
+      },
+      {
+        test: /\.less$/,
+        use: ['style-loader', 'css-loader', 'less-loader'],
+        exclude: /\.module\.less$/,
+      },
+      {
         test: /\.s?(a|c)ss$/,
         use: [MiniCssExtractPlugin.loader, 'css-loader', 'sass-loader'],
         exclude: /\.module\.s?(c|a)ss$/,

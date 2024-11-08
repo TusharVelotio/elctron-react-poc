@@ -1,8 +1,9 @@
 import { MemoryRouter as Router, Routes, Route, Link } from 'react-router-dom';
-import './App.css';
+import './App.scss';
 import { initNavigation } from '@noriginmedia/react-spatial-navigation';
 import WS from '../Containers/websocket/ws';
 import FocusableButtonGrid from '../Containers/FocusableButton/buttonGrid';
+import MySpotlightApp from '../Containers/Input/spotable';
 
 initNavigation();
 
@@ -22,8 +23,28 @@ function App() {
         <Route
           path="/ws"
           element={
-            <div>
-              <WS />
+            <div style={{ display: 'flex', flexDirection: 'row' }}>
+              <div>
+                <MySpotlightApp />
+                <MySpotlightApp />
+                <MySpotlightApp />
+                <MySpotlightApp />
+                <MySpotlightApp />
+              </div>{' '}
+              <div>
+                <MySpotlightApp />
+                <MySpotlightApp />
+                <MySpotlightApp />
+                <MySpotlightApp />
+                <MySpotlightApp />
+              </div>{' '}
+              <div>
+                <MySpotlightApp />
+                <MySpotlightApp />
+                <MySpotlightApp />
+                <MySpotlightApp />
+                <MySpotlightApp />
+              </div>
             </div>
           }
         />

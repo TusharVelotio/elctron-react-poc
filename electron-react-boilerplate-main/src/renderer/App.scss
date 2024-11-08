@@ -8,9 +8,9 @@ body {
   height: 100vh;
   background: linear-gradient(
     200.96deg,
-    #fedc2a -29.09%,
-    #dd5789 51.77%,
-    #7a2c9e 129.35%
+    hsl(60, 9%, 91%) -29.09%,
+    #cfbbc3 51.77%,
+    #d0c9d4 129.35%
   );
   font-family: sans-serif;
   overflow-y: hidden;
@@ -59,4 +59,9 @@ a:hover {
   justify-content: center;
   align-items: center;
   margin: 20px 0;
+}
+.box {
+  border: 1px solid #fff;
+  padding: 5px;
+  margin: 5px;
 }
